@@ -1,0 +1,130 @@
+*::selection {
+    background-color: #A31D1D;
+    color: #E5D0AC;
+}
+* {
+    margin: 0;
+}
+
+html {
+    font-size: larger;
+    scrollbar-color: #A31D1D #6D2323;
+    scrollbar-gutter: both;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: #FEF9E1;
+    color: #FEF9E1;
+}
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #A31D1D;
+    width: 100%;
+    padding: 25px 0;
+    margin-bottom: 7vh;
+    align-content: center;
+}
+.title {
+    margin: 0 auto;
+    width: fit-content;
+}
+hr {
+    width: 50px;
+    border: 2px solid #FEF9E1;
+    border-radius: 25px;
+    margin: 10px auto 5px;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center;
+    margin: 0 auto;
+    width: 75vw;
+    height: fit-content;
+    min-width: 90vh;
+}
+.fotos {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    gap: 25px;
+}
+.fotos img {
+    width: 200px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    box-shadow: 0 0 17px 0 #000;
+    border-radius: 25px;
+    transition: ease .2s;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+.fotos img:hover {
+    transform: scale(1.2);
+}
+.fotos h1 {
+    position: absolute;
+    top: 37.5px;
+    left: 37.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #A31D1D;
+    font-size: 100px;
+    background-color: #6D2323;
+    border-radius: 100%;
+    grid-area: 2 / 2;
+    width: 125px;
+    height: 125px;
+}
+
+.preferenze h1 {
+    width: 100%;
+    padding: 15px;
+    box-sizing: inherit;
+    background-color: #6D2323;
+    text-align: center;
+    border-radius: 20px 20px 0 0;
+}
+.preferenze {
+    width: 450px;
+    box-sizing: border-box;
+    background-color: #E5D0AC;
+    border-radius: 20px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 25px 40px;
+    color: #000;
+    height: fit-content;
+    min-height: 50vh;
+    padding: 20px 0;
+}
+.voce {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    height: 130px;
+    width: 100%;
+    position: relative;
+}
+
+#history {
+    width: 100%;
+}
+#history p {
+    text-indent: 30px;
+    margin: 10px 0;
+}

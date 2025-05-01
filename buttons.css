@@ -1,0 +1,97 @@
+/* Input difficoltà */
+#in-difficulty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    user-select: none;
+}
+#range-difficulty {
+    -webkit-appearance: none;
+    background-color: #A31D1D;
+    width: 150px;
+    border-radius: 50px;
+    margin-bottom: 10px;
+}
+input::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    height: 20px;
+    border-radius: 50px;
+    overflow: hidden;
+}
+#range-difficulty::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 0 50px 50px 0;
+    /* Background variabile in base alla posizione dello slider */
+    box-shadow: -340px 0 0 320px #6D2323, inset 0 0 0 40px #6D2323/*per lo slider*/, 340px 0 0 320px #A31D1D;
+}
+#range-difficulty::-webkit-slider-thumb::after {
+    content: '+';
+}
+#markers {
+    display: flex;
+    justify-content: space-between;
+    width: 93%;
+    color: #000;
+}
+
+
+/* btn di submit */
+#div-btn {
+    position: absolute;
+    top: calc(100% - 48px);
+    left: calc(50% - 150px);
+    height: 50px;
+    width: 300px;
+    border-radius: 19px;
+    background-color: #6D2323;
+    transition: ease-in-out .2s;
+    border: 4px solid #333;
+    user-select: none;
+    cursor: pointer;
+}
+#div-btn:hover {
+    padding-bottom: 10px;
+    transform: translateY(-10px);
+}
+#div-btn:hover #btn {
+    background-color: #A31D1D;
+}
+#div-btn:active {
+    padding-bottom: 4px;
+    transform: translateY(-4px);
+    transition: ease-in-out .1s;
+}
+
+#btn {
+    background-color: #6D2323;
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    color: #FEF9E1;
+    transition: ease-in-out .2s;
+    cursor: pointer;
+}
+#btn span {
+    position: relative;
+}
+#btn span::after {
+    content: '»';
+    opacity: 0;
+    position: absolute;
+    right: -7px;
+    transition: ease-in-out .4s;
+}
+#div-btn:hover span::after {
+    opacity: 1;
+    right: -15px;
+}
+#div-btn:active #btn{
+    top: -5px;
+}

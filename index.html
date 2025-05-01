@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gioco di memoria</title>
+    <meta name="description" content="Un gioco di memoria dove devi ricordare quante volte una foto tra 9 è stata visualizzata, sito richiesto dal prof. De Pieri">
+    <meta name="author" content="Gabriel Madiotto">
+    <meta name="keywords" content="game, memorize, memory, funny">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="buttons.css">
+</head>
+<body>
+    <header>
+        <h1 class="title">Gioco di memoria<hr></h1>
+    </header>
+
+    <main>
+        <div class="fotos">
+            <img src="img/frank-ocean.jpg" alt="" class="cantante">
+            <img src="img/mac-miller.jpeg" alt="" class="cantante">
+            <img src="img/steve-lacy.jpg" alt="" class="cantante">
+            <img src="img/travis-scott.jpeg" alt="" class="cantante">
+            <img src="img/Tyler-The-Creator.jpg" alt="" class="cantante">
+            <img src="img/Ye.png" alt="" class="cantante">
+            <img src="img/doechii.png" alt="" class="cantante">
+            <img src="img/nas.jpg" alt="" class="cantante">
+            <img src="img/Pharrell_Williams.jpg" alt="" class="cantante">
+        </div>
+
+        <div class="preferenze">
+            <h1 class="title">Impostazioni<hr></h1>
+            <div class="form">
+                <div id="history">
+                    <h3>Round Recenti:</h3>
+                    <p>asdsdaadsads</p>
+                    <p>asdsdaadsads</p>
+                    <p>asdsdaadsads</p>
+                    <p>asdsdaadsads</p>
+                    <p>asdsdaadsads</p>
+                </div>
+                <div class="voce">
+                    <label for="difficulty">Difficoltà: </label>
+                    <div id="in-difficulty">
+                        <input type="range" id="range-difficulty" min="1" max="5" list="markers" value="1">
+                        <datalist id="markers">
+                            <option value="1" label="1"></option>
+                            <option value="2" label="2"></option>
+                            <option value="3" label="3"></option>
+                            <option value="4" label="4"></option>
+                            <option value="5" label="5"></option>
+                        </datalist>
+                    </div>
+                    <div id="div-btn"><button id="btn"><span>Gioca</span></button></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
