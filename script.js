@@ -32,59 +32,64 @@ function showRndImg(tempo) {
     }, tempo)
 }
 
+let playing = false;
 
 btn_gioca.addEventListener("click", () => {
-    switch (in_difficulty.value) {
-        case '1':
-            tempo_singola_img = 900 + 400;
-            tempo_risposta = 5000;
-            qty = 14;
-            tempo_tot = tempo_singola_img * qty + tempo_risposta + 3000;
-            break;
-        case '2':
-            tempo_singola_img = 700 + 400;
-            tempo_risposta = 4000;
-            qty = 15;
-            tempo_tot = tempo_singola_img * qty + tempo_risposta + 3000;
-            break;
-        case '3':
-            tempo_singola_img = 500 + 400;
-            tempo_risposta = 3500;
-            qty = 16;
-            tempo_tot = tempo_singola_img * qty + tempo_risposta + 3000;
-            break;
-        case '4':
-            tempo_singola_img = 400 + 400;
-            tempo_risposta = 3000;
-            qty = 17;
-            tempo_tot = tempo_singola_img * qty + tempo_risposta + 3000;
-            break;
-        case '5':
-            tempo_singola_img = 300 + 400;
-            tempo_risposta = 2500;
-            qty = 19;
-            tempo_tot = tempo_singola_img * qty + tempo_risposta + 3000;
-            break;
+    if (!playing) {
+        playing = true;
+        switch (in_difficulty.value) {
+            case '1':
+                tempo_singola_img = 900 + 400;
+                tempo_risposta = 5000;
+                qty = 14;
+                tempo_tot = tempo_singola_img * qty + tempo_risposta + 3000;
+                break;
+            case '2':
+                tempo_singola_img = 700 + 400;
+                tempo_risposta = 4000;
+                qty = 15;
+                tempo_tot = tempo_singola_img * qty + tempo_risposta + 3000;
+                break;
+            case '3':
+                tempo_singola_img = 500 + 400;
+                tempo_risposta = 3500;
+                qty = 16;
+                tempo_tot = tempo_singola_img * qty + tempo_risposta + 3000;
+                break;
+            case '4':
+                tempo_singola_img = 400 + 400;
+                tempo_risposta = 3000;
+                qty = 17;
+                tempo_tot = tempo_singola_img * qty + tempo_risposta + 3000;
+                break;
+            case '5':
+                tempo_singola_img = 300 + 400;
+                tempo_risposta = 2500;
+                qty = 19;
+                tempo_tot = tempo_singola_img * qty + tempo_risposta + 3000;
+                break;
+        }
+
+        hideAllImgs();
+
+        setTimeout(() => {
+            let i=1;
+            let round = setInterval(() => {
+                i++;
+                if (i <= qty) {
+                    showRndImg(tempo_singola_img);
+                } else {
+                    clearInterval(round);
+                    setTimeout(() => {
+                        showRndImg(tempo_risposta);
+                    }, 1000);
+                }
+            }, tempo_singola_img + 250);
+        }, 3000);
+
+        setTimeout(() => {
+            showAllImgs();
+        }, tempo_tot + 250 * qty + 1500);
     }
-
-    hideAllImgs();
-
-    setTimeout(() => {
-        let i=1;
-        let round = setInterval(() => {
-            i++;
-            if (i <= qty) {
-                showRndImg(tempo_singola_img);
-            } else {
-                clearInterval(round);
-                setTimeout(() => {
-                    showRndImg(tempo_risposta);
-                }, 1000);
-            }
-        }, tempo_singola_img + 250);
-    }, 3000);
-
-    setTimeout(() => {
-        showAllImgs();
-    }, tempo_tot + 250 * qty + 1500);
 })
+

@@ -24,7 +24,7 @@ header {
     flex-wrap: wrap;
     background-color: #A31D1D;
     width: 100%;
-    padding: 25px 0;
+    padding: 30px 0;
     margin-bottom: 7vh;
     align-content: center;
 }
@@ -50,10 +50,8 @@ main {
     min-width: 90vh;
 }
 .fotos {
-    position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
     justify-items: center;
     align-items: center;
     gap: 25px;
@@ -70,21 +68,6 @@ main {
 }
 .fotos img:hover {
     transform: scale(1.2);
-}
-.fotos h1 {
-    position: absolute;
-    top: 37.5px;
-    left: 37.5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #A31D1D;
-    font-size: 100px;
-    background-color: #6D2323;
-    border-radius: 100%;
-    grid-area: 2 / 2;
-    width: 125px;
-    height: 125px;
 }
 
 .preferenze h1 {
@@ -127,4 +110,51 @@ main {
 #history p {
     text-indent: 30px;
     margin: 10px 0;
+}
+
+.blur {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(6px);
+}
+.answer {
+    width: 500px;
+    height: 200px;
+    background-color: #A31D1D;
+    box-sizing: border-box;
+    top: calc(50% - 100px);
+    left: calc(50% - 250px);
+    display: grid;
+    grid-template-columns: 1fr;
+    align-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+}
+.answer h2 {
+    border-radius: 20px 20px 0 0;
+    background-color: #6D2323;
+    padding: 20px;
+}
+.input {
+    height: 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: space-between;
+    justify-items: center;
+    padding: 0 25px;
+}
+.answer input {
+    width: 300px;
+    margin: 0 auto;
+    padding: 5px;
+}
+.answer button {
+    width: 100px;
+    padding: 10px;
 }
